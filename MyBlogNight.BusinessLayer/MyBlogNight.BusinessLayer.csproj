@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="Concrete\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Container\" />
+    <Folder Include="ErrorMessages\" />
+    <Folder Include="ValidatioRules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBlogNight.DataAccessLayer\MyBlogNight.DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>
