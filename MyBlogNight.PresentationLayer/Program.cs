@@ -1,4 +1,8 @@
+using MyBlogNight.BusinessLayer.Abstract;
+using MyBlogNight.BusinessLayer.Concrete;
+using MyBlogNight.DataAccessLayer.Abstract;
 using MyBlogNight.DataAccessLayer.Context;
+using MyBlogNight.DataAccessLayer.EntityFramework;
 using MyBlogNight.EntityLayer.Concrete;
 using MyBlogNight.PresentationLayer.Models;
 
@@ -8,6 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<BlogContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityErrorValidator>();
+
+builder.Services.AddScoped<IArticleDal, EfArticleDal>();
+builder.Services.AddScoped<IArticleService, ArticleManager>();
+
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
 builder.Services.AddControllersWithViews();
 

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\" />
     <Folder Include="Logging\" />
     <Folder Include="Container\" />
     <Folder Include="ErrorMessages\" />

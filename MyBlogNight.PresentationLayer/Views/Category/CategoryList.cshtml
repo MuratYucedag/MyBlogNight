@@ -1,0 +1,31 @@
+﻿@model List<MyBlogNight.EntityLayer.Concrete.Category>
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Kategori Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Bloglar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td><a href="#" class="btn btn-danger">Sil</a></td>
+                <td><a href="#" class="btn btn-success">Güncelle</a></td>
+                <td><a href="#" class="btn btn-warning">Bloglar</a></td>
+            </tr>
+        }
+    </table>
+    <a href="#" class="btn btn-primary">Yeni Kategori Girişi</a>
+</div>
