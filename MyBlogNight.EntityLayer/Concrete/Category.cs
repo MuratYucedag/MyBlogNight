@@ -10,6 +10,7 @@ namespace MyBlogNight.EntityLayer.Concrete
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public List<Article> Articles { get; set; }
     }
 }
 //public-private-internal-protected
