@@ -9,7 +9,7 @@ namespace MyBlogNight.PresentationLayer.Controllers
         public ArticleController(IArticleService articleService)
         {
             _articleService = articleService;
-        }
+        }   
         public IActionResult ArticleList()
         {
             var values = _articleService.TArticleListWithCategory();
