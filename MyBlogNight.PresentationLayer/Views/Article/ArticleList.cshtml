@@ -24,9 +24,10 @@
                 <td>@item.Title</td>
                 <td>@item.Category.CategoryName</td>
                 <td><a href="/Article/DeleteArticle/@item.ArticleId" class="btn btn-danger">Sil</a></td>
-                <td><a href="/Article/UpdateArticle/@item.ArticleId" class="btn btn-danger">Güncelle</a></td>
-                <td><a href="/Article/CommentArticle/@item.ArticleId" class="btn btn-danger">Yorumlar</a></td>
+                <td><a href="/Article/UpdateArticle/@item.ArticleId" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Article/CommentArticle/@item.ArticleId" class="btn btn-info">Yorumlar</a></td>
             </tr>
         }
     </table>
+    <a href="/Article/CreateArticle/" class="btn btn-info">Yeni Makale Girişi</a>
 </div>
