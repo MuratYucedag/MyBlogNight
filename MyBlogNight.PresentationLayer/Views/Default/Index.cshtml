@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <!-- Kategoriler -->
+                @await Component.InvokeAsync("_DefaultCategoryListComponentPartial")
+
+                <!-- Sosyal Medya -->
+                @await Component.InvokeAsync("_DefaultSocialMediaComponentPartial")
+
+                <!-- Öne Çıkan Bloglar -->
+                <div class="mb-4">
+                    <h5 class="border-bottom pb-2">Öne Çıkan Bloglar</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">En İyi Yazılım Araçları</li>
+                        <li class="list-group-item">Minimal Tasarım Rehberi</li>
+                        <li class="list-group-item">2024 Seyahat Trendleri</li>
+                    </ul>
+                </div>
+
+                <!-- Yazarlar -->
+                <div>
+                    <h5 class="border-bottom pb-2">Yazarlar</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">Ahmet Yılmaz</li>
+                        <li class="list-group-item">Elif Kara</li>
+                        <li class="list-group-item">Mehmet Öz</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Blog Listesi -->
+            <div class="col-md-8">
+                <h3 class="mb-4">Blog Listesi</h3>
+
+                <!-- Blog 1 -->
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Blog Kapak">
+                    <div class="card-body">
+                        <h5 class="card-title">Teknolojinin Geleceği</h5>
+                        <p class="card-text">
+                            <small class="text-muted">Kategori: Teknoloji | Yazar: Ahmet Yılmaz | Tarih: 21 Kasım 2024</small>
+                        </p>
+                        <p class="card-text">Teknoloji dünyasında gelecekte bizi nelerin beklediğini öğrenmek ister misiniz? Bu yazıda detayları keşfedin.</p>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Blog Kapak">
+                    <div class="card-body">
+                        <h5 class="card-title">Minimal Tasarım Rehberi</h5>
+                        <p class="card-text">
+                            <small class="text-muted">Kategori: Tasarım | Yazar: Elif Kara | Tarih: 20 Kasım 2024</small>
+                        </p>
+                        <p class="card-text">Minimal tasarım prensipleriyle etkileyici ve modern tasarımlar nasıl oluşturulur?</p>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Blog Kapak">
+                    <div class="card-body">
+                        <h5 class="card-title">2024 Seyahat Trendleri</h5>
+                        <p class="card-text">
+                            <small class="text-muted">Kategori: Seyahat | Yazar: Mehmet Öz | Tarih: 19 Kasım 2024</small>
+                        </p>
+                        <p class="card-text">2024'te dünyanın farklı yerlerine seyahat etmek isteyenler için trend destinasyonlar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

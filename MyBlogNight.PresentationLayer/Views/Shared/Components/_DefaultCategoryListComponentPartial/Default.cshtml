@@ -1,0 +1,11 @@
+﻿@model List<Category>
+
+<div class="mb-4">
+    <h5 class="border-bottom pb-2">Kategoriler</h5>
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">@item.CategoryName</li>
+        }
+    </ul>
+</div>

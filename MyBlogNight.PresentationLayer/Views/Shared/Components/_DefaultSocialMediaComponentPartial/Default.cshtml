@@ -1,0 +1,11 @@
+﻿@model List<SocialMedia>
+
+<div class="mb-4">
+    <h5 class="border-bottom pb-2">Sosyal Medya Hesaplarımız</h5>
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item"><a href="@item.LinkUrl">@item.Title</a></li>
+        }
+    </ul>
+</div>

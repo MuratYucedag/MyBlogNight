@@ -19,6 +19,9 @@ builder.Services.AddScoped<IArticleService, ArticleManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
+builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
