@@ -1,0 +1,111 @@
+﻿@model Article
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .author, .comments, .new-comment {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .comment {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .comment:last-child {
+                border-bottom: none;
+            }
+
+        .new-comment textarea, .new-comment input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .new-comment button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .new-comment button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Blog Başlığı ve İçeriği -->
+        <h1>@Model.Title</h1>
+        <img src="@Model.CoverImageUrl" style="height:500px; width:100%;" />
+
+        <p><strong>Yayınlanma Tarihi:</strong> @Model.CreatedDate.ToString("dd-MMM-yyyy")</p>
+        <p>Kategori: <strong>@Model.Category.CategoryName</strong></p>
+        <p>@Model.Detail.</p>
+
+        <!-- Yazar Bilgisi -->
+        <div class="author">
+            <h3>Yazar Bilgisi</h3>
+            <p><strong>Ad:</strong> @Model.AppUser.Name @Model.AppUser.Surname</p>
+            <p><strong>Biyografi:</strong> Yazılım geliştiricisi ve eğitim içerik üreticisi. ASP.NET Core ve yapay zeka konularında uzman.</p>
+        </div>
+
+        <!-- Yorumlar -->
+        <div class="comments">
+            <h3>Yorumlar</h3>
+            <div class="comment">
+                <p><strong>Ali:</strong> Çok faydalı bir yazı olmuş, teşekkürler!</p>
+                <p><em>28 Kasım 2024</em></p>
+            </div>
+            <div class="comment">
+                <p><strong>Ayşe:</strong> Bu konuda başka bir yazı daha bekliyoruz.</p>
+                <p><em>27 Kasım 2024</em></p>
+            </div>
+        </div>
+
+        <!-- Yeni Yorum Ekle -->
+        <div class="new-comment">
+            <h3>Yorum Ekle</h3>
+            <form>
+                <label for="name">Adınız:</label>
+                <input type="text" id="name" name="name" placeholder="Adınızı girin" required>
+
+                <label for="comment">Yorumunuz:</label>
+                <textarea id="comment" name="comment" rows="5" placeholder="Yorumunuzu yazın" required></textarea>
+
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
