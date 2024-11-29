@@ -1,0 +1,12 @@
+﻿@model List<Comment>
+
+<div class="comments">
+    <h3>Yorumlar</h3>
+    @foreach (var item in Model)
+    {
+        <div class="comment">
+            <p><strong>@item.AppUser.Name @item.AppUser.Surname:</strong> @item.CommentDetail</p>
+            <p><em>@item.CreatedDate.ToString("dd-MMM-yyyy")</em></p>
+        </div>
+    }
+</div>

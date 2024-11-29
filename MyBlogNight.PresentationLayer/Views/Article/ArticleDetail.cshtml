@@ -81,17 +81,7 @@
         </div>
 
         <!-- Yorumlar -->
-        <div class="comments">
-            <h3>Yorumlar</h3>
-            <div class="comment">
-                <p><strong>Ali:</strong> Çok faydalı bir yazı olmuş, teşekkürler!</p>
-                <p><em>28 Kasım 2024</em></p>
-            </div>
-            <div class="comment">
-                <p><strong>Ayşe:</strong> Bu konuda başka bir yazı daha bekliyoruz.</p>
-                <p><em>27 Kasım 2024</em></p>
-            </div>
-        </div>
+        @await Component.InvokeAsync("_CommentListByArticleIdComponentPartial")
 
         <!-- Yeni Yorum Ekle -->
         <div class="new-comment">

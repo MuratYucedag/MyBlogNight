@@ -13,7 +13,7 @@
                 <p class="card-text">
                     <small class="text-muted">Kategori: @item.Category.CategoryName | Yazar: @item.AppUser.Name @item.AppUser.Surname | Tarih: @item.CreatedDate.ToString("dd-MMM-yyyy")</small>
                 </p>
-                <p class="card-text">@item.Detail.Substring(0,200)...<a href="#">Devamını Oku</a></p>
+                <p class="card-text">@item.Detail.Substring(0,200)...<a href="/Article/ArticleDetail/@item.ArticleId">Devamını Oku</a></p>
             </div>
         </div>
     }

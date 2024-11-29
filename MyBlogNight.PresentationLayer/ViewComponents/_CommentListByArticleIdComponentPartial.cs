@@ -12,8 +12,8 @@ namespace MyBlogNight.PresentationLayer.ViewComponents
         }
         public IViewComponentResult Invoke()
         {
-            _commentService.TGetById(1);
-            return View();
+            var values = _commentService.TGetCommentsByArticleId(1);
+            return View(values);
         }
     }
 }

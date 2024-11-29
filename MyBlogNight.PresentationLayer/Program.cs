@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using MyBlogNight.BusinessLayer.Abstract;
 using MyBlogNight.BusinessLayer.Concrete;
 using MyBlogNight.DataAccessLayer.Abstract;
@@ -22,7 +23,10 @@ builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICommentDal, EfCommentDal>();
+builder.Services.AddScoped<ICommentService, CommentManager>();
+
+builder.Services.AddControllersWithViews().AddFluentValidation();
 
 var app = builder.Build();
 

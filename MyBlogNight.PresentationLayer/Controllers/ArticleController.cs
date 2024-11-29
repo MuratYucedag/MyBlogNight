@@ -49,6 +49,8 @@ namespace MyBlogNight.PresentationLayer.Controllers
         }
         public IActionResult ArticleDetail(int id)
         {
+            _articleService.TArticleViewCountIncrease(id);
+
             var value = _articleService.TArticleListWithCategoryAndAppUserByArticleId(id);
             return View(value);
         }
