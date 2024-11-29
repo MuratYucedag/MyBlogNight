@@ -39,10 +39,17 @@ namespace MyBlogNight.DataAccessLayer.EntityFramework
 
         public void ArticleViewCountIncrease(int id)
         {
-            var context=new BlogContext();
+            var context = new BlogContext();
             var updatedValue = context.Articles.Find(id);
             updatedValue.ArticleViewCount += 1;
             context.SaveChanges();
+        }
+
+        public List<Article> GetArticlesByAppUserId(int id)
+        {
+            var context = new BlogContext();
+            var values = context.Articles.Where(x => x.AppUserId == id).ToList();
+            return values;
         }
     }
 }

@@ -1,0 +1,11 @@
+﻿@model List<MyBlogNight.EntityLayer.Concrete.Article>
+
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <h2>@item.Title</h2>
+    <br />
+}
