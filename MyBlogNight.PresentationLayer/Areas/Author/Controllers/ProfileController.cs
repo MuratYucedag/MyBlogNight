@@ -29,7 +29,18 @@ namespace MyBlogNight.PresentationLayer.Areas.Author.Controllers
         [HttpPost]
         public async Task<IActionResult> EditMyProfile(UserEditViewModel model)
         {
-
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            user.Name = model.Name;
+            user.Surname = model.Surname;
+            user.Email = model.Email;
+            user.UserName = model.Username;
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, model.Password);
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("CategoryList", "Category"/*, new { Area = "AreaAdı" }*/);
+            }
+            return View();
         }
     }
 }
